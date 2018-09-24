@@ -1,6 +1,6 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const WebpackCdnPlugin = require("webpack-cdn-plugin");
+// const WebpackCdnPlugin = require("webpack-cdn-plugin");
 const path = require("path");
 const webpack = require("webpack");
 
@@ -13,21 +13,21 @@ module.exports = (env, argv) => {
       filename: "index.html",
       inject: "body"
     }),
-    new WebpackCdnPlugin({
-      modules: {
-        "deps": [
-          { name: "react", var: "React", path: "umd/react.production.min.js" },
-          { name: "react-dom", var: "ReactDOM", path: "umd/react-dom.production.min.js" },
-          { name: "react-onclickoutside", var: "onClickOutside", path: "dist/react-onclickoutside.min.js" },
-          { name: "react-router", var: "ReactRouter", path: "umd/react-router.min.js" },
-          { name: "react-router-dom", var: "ReactRouterDOM", path: "umd/react-router-dom.min.js" },
-          { name: "prop-types", var: "PropTypes", path: "prop-types.min.js" },
-          { name: "@alchemyalcove/ether", var: "Ether", path: "dist/ether.js" },
-          { name: "emotion", var: "emotion", path: "dist/emotion.umd.min.js" }
-        ]
-      }
-    })
   ];
+  /*new WebpackCdnPlugin({
+    modules: {
+      "deps": [
+	{ name: "react", var: "React", path: "umd/react.production.min.js" },
+	{ name: "react-dom", var: "ReactDOM", path: "umd/react-dom.production.min.js" },
+	{ name: "react-onclickoutside", var: "onClickOutside", path: "dist/react-onclickoutside.min.js" },
+	{ name: "react-router", var: "ReactRouter", path: "umd/react-router.min.js" },
+	{ name: "react-router-dom", var: "ReactRouterDOM", path: "umd/react-router-dom.min.js" },
+	{ name: "prop-types", var: "PropTypes", path: "prop-types.min.js" },
+	{ name: "emotion", var: "emotion", path: "dist/emotion.umd.min.js" }
+      ]
+    }
+  }) */
+  // { name: "@alchemyalcove/ether", var: "Ether", path: "dist/ether.js" },
 
   if(env.production) {
     plugins.push(

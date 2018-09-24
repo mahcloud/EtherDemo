@@ -11,9 +11,9 @@
   "scripts": {
     "lint": "eslint test demo app",
     "lint:css": "stylelint \"./**/*.style.js\"",
-    "nomap": "./node_modules/.bin/webpack-dev-server --env.nodevtools",
+    "nomap": "cp ../Ether/dist/ether.js ./ && ./node_modules/.bin/webpack-dev-server --env.nodevtools",
     "production": "./node_modules/.bin/webpack --env.production --progress",
-    "start": "./node_modules/.bin/webpack-dev-server --env"
+    "start": "cp ../Ether/dist/ether.js ./ && ./node_modules/.bin/webpack-dev-server --env"
   },
   "dependencies": {
     "@alchemyalcove/ether": "1.0.5",
